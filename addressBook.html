@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AddressBook</title>
+	<link rel="stylesheet" href="addressbook.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="addressbook.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="title">
+			<h1>Phone Directory</h1>
+		</div>
+		<div class="quickadd"><button id="QuickAdd">+ Add</button></div>
+		<div ng-app="myApp" ng-controller="myCtrl" class="quickaddForm">
+			<label for="fullname">Name</label><input ng-model="name" type="text" id="fullname" class="formFields">
+			<label for="phone">Phone</label><input ng-model="phone" type="text" id="phone" class="formFields">
+			<br><br>
+			<p>Name: {{name}}</p>
+			<p>Phone: {{phone}}</p>
+			<br><br>
+			<button id="Add">Add Now</button><button id="Cancel">Cancel</button>
+		</div>
+		<div class="addbook">
+			<!-- <div class="entry">
+				<div class="name"><p>Sachin Bhatnagar</p></div>
+				<div class="phone"><p>9316523541</p></div>
+				<div class="del"><a href="#">Delete</a></div>
+			</div> -->
+			
+		</div>
+	</div>
+	<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "";
+    $scope.phone = "";    
+});
+</script>
+
+</body>
+</html>
